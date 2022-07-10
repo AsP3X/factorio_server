@@ -24,7 +24,7 @@ RUN dpkg --add-architecture i386
 RUN apt update
 RUN apt install -y curl wget file tar bzip2 gzip unzip screen nano
 RUN apt install -y bsdmainutils python3 util-linux ca-certificates binutils bc jq tmux netcat 
-RUN apt install -y lib32gcc-s1 lib32stdc++6 xz-utils cpio
+RUN apt install -y lib32gcc-s1 lib32stdc++6 xz-utils cpio distro-info
 
 RUN groupadd --gid ${USER_GID} ${USERNAME}
 RUN useradd --uid ${USER_UID} --gid ${USER_GID} -m ${USERNAME}
