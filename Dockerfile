@@ -26,6 +26,8 @@ RUN apt install -y curl wget file tar bzip2 gzip unzip screen nano
 RUN apt install -y bsdmainutils python3 util-linux ca-certificates binutils bc jq tmux netcat distro-info
 RUN apt install -y lib32gcc-s1 lib32stdc++6 xz-utils cpio distro-info
 
+RUN rm -rf /var/cache/apt
+
 RUN groupadd --gid ${USER_GID} ${USERNAME}
 RUN useradd --uid ${USER_UID} --gid ${USER_GID} -m ${USERNAME}
 RUN chown -R fctrserver:fctrserver /serverfiles
